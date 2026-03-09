@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Подробнее посмотреть торт: {{ cake.name }}</h1>
+  <a href="{% url 'cakes_by_category' cake.category.slug %}">{{ cake.category }}</a>
+  <p>Slug(ссылка): {{ cake.slug }}</p>
+  <p>Описание: {{ cake.description }}</p>
+  <p>Цена: {{ cake.price }} KZT</p>
+  <p>Вес: {{ cake.weight }} г</p>
+  <img src="{{ cake.image.url }}" alt="" style="width: 500px; height: 500px;">
+  {% if cake.is_available %}
+  <p>В наличии</p>
+  {% endif %}
+  <p>Дата создания: {{ cake.created_at }}</p>
+</body>
+</html>
