@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from catalog.models import Cake, Category
 
-# Create your views here.
+def home(request):
+    popular_cakes = Cake.objects.filter(is_available=True)[:6]
+    categories = Category.objects.all()
+    context = {
+        'popular_cakes': popular_cakes,
+        'categories': categories,
+    }
+    return render(request, 'core/home.html', context)
