@@ -3,14 +3,21 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-
+html, body {
+    height: 100%;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #fafafa;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
+main {
+    flex: 1;
+}
 /* Контейнер */
 .container {
     max-width: 1200px;
@@ -57,7 +64,7 @@ body {
 }
 
 .nav a:hover {
-    color: #c819b6;
+    color: #f3e22c;
     transform: translateY(-2px);
 }
 
@@ -76,44 +83,59 @@ body {
 /* LOGIN */
 
 .login{
-    border: 2px solid #9f2510;
-    color: #9f2510;
+    border: 2px solid #FFF4F6;
+    color: #FFF4F6;
     margin-left: 20px;
 }
 
 .login:hover{
-    background: #0d369e;
-    color: white;
+    background-color: #FFF4F6; 
+    color: #e63946;        
 }
 
 
 /* REGISTER */
 
 .register{
-    background: #9f2510;
-    color: white;
+    border: 2px solid #FFF4F6;
+    color: #FFF4F6;
     margin-left: 10px;
 }
 
 .register:hover{
-    background: #0d369e;
+    background-color: #FFF4F6; 
+    color: #e63946;  
 }
 
 /* Hero */
 .hero {
-    text-align: center;
     padding: 100px 20px;
-    background: #ffe4ec;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("../images/bacground_img.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 
 .hero h2 {
     font-size: 40px;
     margin-bottom: 20px;
+    color: whitesmoke;
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 30px;
+    color: whitesmoke;
 }
 
 /* Кнопки */
@@ -129,7 +151,7 @@ body {
 }
 
 .btn:hover {
-    background: #c819b6;
+    background: #af3c76;
 }
 
 /* Сетка тортов */
@@ -146,6 +168,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
+    transition: all 0.3s ease;
+}
+.cake-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .price {
@@ -357,15 +384,18 @@ border-radius:10px;
     gap: 40px;
     flex-wrap: wrap;
 }
-
 .member{
     width: 220px;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
-
+.member:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
 .member img{
     width: 100%;
     border-radius: 10px;

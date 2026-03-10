@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Торты по категории: {{ category.name }}</h1>
+    <div>
+        {% for cake in cakes %}
+        <a href="{% url 'cake_detail' cake.slug %}">{{ cake.name }}</a>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
