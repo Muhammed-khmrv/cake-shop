@@ -317,6 +317,13 @@ main {
     margin-bottom: 20px;
     line-height: 1.5;
 }
+.product-category{
+    font-size:14px;
+    color:#e75480;
+    margin-top:5px;
+    margin-bottom:10px;
+    font-weight:500;
+}
 
 /* =========================
    ORDERS PAGE
@@ -717,4 +724,57 @@ main {
         flex-direction: column;
         align-items: center;
     }
+}
+/* кнопки на странице успешного заказа */
+.success-actions{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.success-actions .btn,
+.success-actions .btn-catalog{
+    width: 220px;
+    padding: 14px 0;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 8px;
+    background: #ff7aa2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-actions .btn:hover,
+.success-actions .btn-catalog:hover{
+    background: #e85d89;
+}
+.catalog-categories{
+    display:flex;
+    gap:12px;
+    margin:20px 0 35px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    padding:10px 20px;
+    border-radius:25px;
+    border:2px solid #ff7aa2;
+    color:#ff7aa2;
+    font-weight:600;
+    transition:0.3s;
+    background:white;
+}
+
+.category-btn:hover{
+    background:#ff7aa2;
+    color:white;
+}
+
+.category-btn.active{
+    background:#ff7aa2;
+    color:white;
 }
