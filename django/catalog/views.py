@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cake, Category
 from cart.cart import Cart
+from reviews.models import Review
 
 def cake_list(request):
     cakes = Cake.objects.filter(is_available=True)
@@ -24,5 +25,12 @@ def cakes_by_category(request, slug):
 
 def cake_detail(request, slug):
     cake = get_object_or_404(Cake, slug=slug, is_available=True)
-    context = {'cake': cake}
-    return render(request, 'catalog/cake_detail.html', context)
+
+    reviews = Review.objects.using('reviews_db').filter(
+        cake_id=cake.id,
+    ).order_by('-created_at')
+
+    return render(request, 'catalog/cake_detail.html', {
+        'cake': cake,
+        'reviews': reviews
+    })

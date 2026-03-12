@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="order-success">
+        <div class="order-success-card">
+            <h1>Спасибо за заказ!</h1>
+            <p class="success-text">
+                Ваш заказ успешно оформлен.
+            </p>
+
+            <div class="success-order-info">
+                <p><strong>Номер заказа:</strong> #{{ order.id }}</p>
+                <p><strong>Имя:</strong> {{ order.full_name }}</p>
+                <p><strong>Телефон:</strong> {{ order.phone }}</p>
+                <p><strong>Адрес:</strong> {{ order.address }}</p>
+                <p><strong>Сумма заказа:</strong> {{ order.total_price }} ₸</p>
+                <p><strong>Дата создания:</strong> {{ order.created_at|date:"d.m.Y H:i" }}</p>
+            </div>
+
+            <div class="success-actions">
+                <a href="{% url 'cake_list' %}" class="btn">Продолжить покупки</a>
+                <a href="{% url 'order_list' %}" class="btn btn-secondary">Мои заказы</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

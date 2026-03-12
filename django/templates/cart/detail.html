@@ -38,7 +38,7 @@
         </table>
         <p><strong>Общая сумма:</strong> {{ cart.get_total_price }} ₸</p>
 
-        <a href="#" class="btn">Оформить заказ</a>
+        <a href="{% url 'order_create' %}" class="btn">Оформить заказ</a>
         <p>Корзина пока пустая.</p>
         <a href="{% url 'cake_list' %}" class="btn">Перейти в каталог</a>
 </div>

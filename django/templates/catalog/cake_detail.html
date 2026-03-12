@@ -17,5 +17,27 @@
   {% endif %}
   <p>Дата создания: {{ cake.created_at }}</p>
   <a href="{% url 'cart_add' cake.id %}">Добавить в корзину</a>
+
+  <section class="reviews-section">
+        <h2>Отзывы</h2>
+
+        {% if reviews %}
+            <div class="reviews-list">
+                {% for review in reviews %}
+                    <div class="review-card">
+                        <div class="review-header">
+                            <strong>{{ review.name }}</strong>
+                            <span>Оценка: {{ review.rating }}/5</span>
+                        </div>
+
+                        <p class="review-text">{{ review.text }}</p>
+                        <small>{{ review.created_at|date:"d.m.Y H:i" }}</small>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Пока отзывов нет. Будьте первым, кто оставит отзыв.</p>
+        {% endif %}
+    </section>
 </body>
 </html>

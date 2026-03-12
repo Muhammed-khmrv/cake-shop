@@ -23,10 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('catalog/', include('catalog.urls')),
-    # path('reviews/', include('reviews.urls')),
+    path('reviews/', include('reviews.urls')),
     path('cart/', include('cart.urls')),
     path('accounts/', include('accounts.urls')),
-    # path('orders/', include('orders.urls')),
+    path('orders/', include('orders.urls')),
     # path('custom_cakes/', include('custom_cakes.urls')),
 ]
 
