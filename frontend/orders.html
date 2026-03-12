@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мои заказы - RaufCake</title>
-<link rel="stylesheet" href="../frontend/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо за заказ | RaufCake</title>
+    <link rel="stylesheet" href="../frontend/css/style.css">
 </head>
-
 <body>
 
 <!-- Header -->
@@ -17,7 +15,6 @@
             <img src="images/logo.png" alt="logo">
             RaufCake
         </div>
-
         <nav class="nav">
             <a href="index.html">Главная</a>
             <a href="catalog.html">Каталог</a>
@@ -25,7 +22,6 @@
             <a href="contacts.html">Контакты</a>
             <a href="team.html">Наша команда</a>
         </nav>
-
         <div class="auth-buttons">
             <a class="login" href="login.html">Login</a>
             <a class="register" href="register.html">Register</a>
@@ -33,72 +29,32 @@
     </div>
 </header>
 
+<!-- Order Success Section -->
+<main class="container">
+    <div class="orders">
+        <h2 class="orders-title">Спасибо за заказ!</h2>
 
-<!-- Orders -->
-<section class="orders container">
+        <div class="order-card" style="text-align:center; padding:30px;">
+            <p class="success-text" style="font-size:16px; margin-bottom:20px;">
+                Ваш заказ успешно оформлен.
+            </p>
 
-<h2 class="orders-title">Мои заказы</h2>
+            <div class="success-order-info" style="text-align:left; margin-bottom:25px;">
+                <p><strong>Номер заказа:</strong> #12345</p>
+                <p><strong>Имя:</strong> Иван Иванов</p>
+                <p><strong>Телефон:</strong> +7 777 123 45 67</p>
+                <p><strong>Адрес:</strong> ул. Абая, 10, Алматы</p>
+                <p><strong>Сумма заказа:</strong> 12 500 ₸</p>
+                <p><strong>Дата создания:</strong> 12.03.2026 14:30</p>
+            </div>
 
-<div class="order-card">
-
-<div class="order-header">
-<h3>Заказ #1042</h3>
-<span class="order-date">12.07.2019</span>
-</div>
-
-<div class="order-products">
-<p>🎂 Клубничный торт</p>
-<p>🧁 Капкейки (6 шт)</p>
-</div>
-
-<div class="order-footer">
-<span class="order-price">8500 ₸</span>
-<button class="btn">Подробнее</button>
-</div>
-
-</div>
-
-
-<div class="order-card">
-
-<div class="order-header">
-<h3>Заказ #1043</h3>
-<span class="order-date">18.07.2019</span>
-</div>
-
-<div class="order-products">
-<p>🎂 Шоколадный торт</p>
-</div>
-
-<div class="order-footer">
-<span class="order-price">5200 ₸</span>
-<button class="btn">Подробнее</button>
-</div>
-
-</div>
-
-
-<div class="order-card">
-
-<div class="order-header">
-<h3>Заказ #1044</h3>
-<span class="order-date">21.07.2019</span>
-</div>
-
-<div class="order-products">
-<p>🍰 Чизкейк</p>
-<p>🧁 Капкейки (4 шт)</p>
-</div>
-
-<div class="order-footer">
-<span class="order-price">6400 ₸</span>
-<button class="btn">Подробнее</button>
-</div>
-
-</div>
-
-</section>
-
+            <div class="success-actions" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                <a href="catalog.html" class="btn">Продолжить покупки</a>
+                <a href="orders.html" class="btn btn-catalog">Мои заказы</a>
+            </div>
+        </div>
+    </div>
+</main>
 
 <!-- Footer -->
 <footer class="footer">

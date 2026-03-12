@@ -1,117 +1,75 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Отзывы | RaufCake</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оставить отзыв | RaufCake</title>
+    <link rel="stylesheet" href="../frontend/css/style.css">
 </head>
-
 <body>
 
 <!-- Header -->
 <header class="header">
-  <div class="container header-container">
-    <div class="logo">
-      <img src="images/logo.png" alt="logo">
-      RaufCake
+    <div class="container header-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+            RaufCake
+        </div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Корзина</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="team.html">Наша команда</a>
+        </nav>
+        <div class="auth-buttons">
+            <a class="login" href="login.html">Login</a>
+            <a class="register" href="register.html">Register</a>
+        </div>
     </div>
-    <nav class="nav">
-      <a href="index.html">Главная</a>
-      <a href="catalog.html">Каталог</a>
-      <a href="cart.html">Корзина</a>
-      <a href="reviews.html">Отзывы</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="team.html">Наша команда</a>
-    </nav>
-    <div class="auth-buttons">
-      <a class="login" href="login.html">Login</a>
-      <a class="register" href="register.html">Register</a>
-    </div>
-  </div>
 </header>
 
-<main>
-  <section class="reviews container">
+<!-- Review Form Section -->
+<main class="container">
+    <div class="reviews" style="max-width:600px; margin:40px auto;">
+        <h2 class="orders-title" style="text-align:center; margin-bottom:30px;">Оставьте свой отзыв</h2>
+        <p style="text-align:center; margin-bottom:25px;">Мы ценим ваше мнение о наших тортах</p>
 
-    <h2 class="reviews-title">Отзывы</h2>
+        <div class="order-card" style="padding:30px; text-align:left;">
+            <form class="review-form">
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd;">
+                </div>
 
-    <div class="review-card">
-      <div class="review-header">
-        <h3 class="review-name">Ферран</h3>
-        <span class="review-date">12.07.2019</span>
-      </div>
-      <div class="review-comment">
-        <div class="review-rate">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label for="rating">Ваша оценка:</label>
+                    <select id="rating" name="rating" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd;">
+                        <option value="">Выберите оценку</option>
+                        <option value="5">5 ⭐</option>
+                        <option value="4">4 ⭐</option>
+                        <option value="3">3 ⭐</option>
+                        <option value="2">2 ⭐</option>
+                        <option value="1">1 ⭐</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom:25px;">
+                    <label for="comment">Ваш отзыв:</label>
+                    <textarea id="comment" name="comment" rows="5" placeholder="Напишите ваш отзыв..." required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd;"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Отправить</button>
+            </form>
         </div>
-        <p>Просто ужас... нет слов. Заказали на 1 января на день рождения сына, а пришло 19 января.</p>
-      </div>
     </div>
-
-    <div class="review-card">
-      <div class="review-header">
-        <h3 class="review-name">Мария</h3>
-        <span class="review-date">18.08.2024</span>
-      </div>
-      <div class="review-comment">
-        <div class="review-rate">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-        </div>
-        <p>Очень вкусно! Заказала торт на день рождения, все были в восторге.</p>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="review-header">
-        <h3 class="review-name">Ламин Ямаль</h3>
-        <span class="review-date">19.08.2024</span>
-      </div>
-      <div class="review-comment">
-        <div class="review-rate">
-          <img src="./images/yellow star.svg" alt="rating" class="rating">
-        </div>
-        <p>Мария шары мне в ворота наебала, торт хуйня!!!</p>
-      </div>
-    </div>
-
-    <div class="review-form-card">
-      <h3>Оставьте свой отзыв</h3>
-      <form class="review-form">
-        <label for="name">Ваше имя:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="rating">Ваша оценка:</label>
-        <select id="rating" name="rating" required>
-          <option value="">Выберите</option>
-          <option value="5">5 ⭐</option>
-          <option value="4">4 ⭐</option>
-          <option value="3">3 ⭐</option>
-          <option value="2">2 ⭐</option>
-          <option value="1">1 ⭐</option>
-        </select>
-
-        <label for="comment">Ваш отзыв:</label>
-        <textarea id="comment" name="comment" rows="4" required></textarea>
-
-        <button type="submit" class="btn">Отправить</button>
-      </form>
-    </div>
-
-  </section>
 </main>
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <p>© 2026 RaufCake. Все права защищены.</p>
-  </div>
+    <div class="container">
+        <p>© 2026 RaufCake. Все права защищены.</p>
+    </div>
 </footer>
 
 </body>
