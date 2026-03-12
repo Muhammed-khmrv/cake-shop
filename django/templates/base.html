@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaufCake</title>
-    <link rel="stylesheet" href="../frontend/css/style.css">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
     </head>
     
     <body>
@@ -14,61 +15,25 @@
         <header class="header">
             <div class="container header-container">
                 <div class="logo">
-                    <img src="images/logo.png" alt="logo">
+                    <img src="{% static './images/logo.png' %}" alt="logo">
                     RaufCake
                 </div>
                 <nav class="nav">
-                    <a href="index.html">Главная</a>
-                    <a href="catalog.html">Каталог</a>
-                    <a href="cart.html">Корзина</a>
-                    <a href="contacts.html">Контакты</a>
-                    <a href="./team.html">Наша команда</a>
+                    <a href="{% url 'home' %}">Главная</a>
+                    <a href="{% url 'cake_list' %}">Каталог</a>
+                    <a href="{% url 'cart_detail' %}">Корзина</a>
+                    <a href="{% url 'contacts' %}">Контакты</a>
+                    <a href="{% url 'about' %}">Наша команда</a>
                 </nav>
                 <div class="auth-buttons">
-                    <a class="login" href="login.html">Login</a>
-                    <a class="register" href="register.html">Register</a>
+                    <a class="login" href="{% url 'login' %}">Login</a>
+                    <a class="register" href="{% url 'register' %}">Register</a>
                 </div>
             </div>
         </header>
     
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
-                <h2>Лучшие торты на заказ</h2>
-                <p>Свежие и вкусные торты для любого праздника</p>
-                <a href="catalog.html" class="btn">Смотреть каталог</a>
-            </div>
-        </section>
-    
-        <!-- Cakes Section -->
-        <section class="cakes container">
-            <div class="cake-card">
-                <a href="./product.html">
-                    <img src="images/Chocolate-cake.jpg" alt="Шоколадный торт">
-                </a>
-                <h3>Шоколадный торт</h3>
-                <p class="price">12000 ₸</p>
-                <button class="btn">В корзину</button>
-            </div>
-    
-            <div class="cake-card">
-                <a href="./product.html">
-                    <img src="images/Strawberry-cake.jpg" alt="Клубничный торт">
-                </a>
-                <h3>Клубничный торт</h3>
-                <p class="price">13500 ₸</p>
-                <button class="btn">В корзину</button>
-            </div>
-    
-            <div class="cake-card">
-                <a href="./product.html">
-                    <img src="images/Vanilla-cake.jpg" alt="Ванильный торт">
-                </a>
-                <h3>Ванильный торт</h3>
-                <p class="price">12500 ₸</p>
-                <button class="btn">В корзину</button>
-            </div>
-        </section>
+        {% block content %}
+        {% endblock %}
 
     <!-- Footer -->
     <footer class="footer">

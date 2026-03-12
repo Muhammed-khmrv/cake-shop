@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main>
+    <section class="contacts container">
+      <h2>Свяжитесь с нами</h2>
+      <p>Email: info@raufcake.kz</p>
+      <p>Телефон: +7 777 123 45 67</p>
+      <p>Адрес: г. Алматы, Казахстан</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш email" required>
+        <textarea placeholder="Сообщение" required></textarea>
+        <button class="btn">Отправить</button>
+      </form>
+    </section>
+  </main>
+{% endblock %}

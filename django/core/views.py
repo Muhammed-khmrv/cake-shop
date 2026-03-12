@@ -9,3 +9,9 @@ def home(request):
         'categories': categories,
     }
     return render(request, 'core/home.html', context)
+
+def about(request):
+    return render(request, 'core/team.html')
+
+def contacts(request):
+    return render(request, 'core/contacts.html')

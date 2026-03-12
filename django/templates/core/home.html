@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    Главная (будут популярные торты)
-    Категории:
-    <a href="{% url 'cake_list' %}">Все торты</a>
-    {% for category in categories %}
-    <a href="{% url 'cakes_by_category' category.slug %}">{{ category.name }} </a>
-    {% endfor %}
-    <p>Популярные торты:</p>
-    {% for cake in popular_cakes %}
-    {{ cake.name }}
-    {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h2>Лучшие торты на заказ</h2>
+                <p>Свежие и вкусные торты для любого праздника</p>
+                <a href="{% url 'cake_list' %}" class="btn">Смотреть каталог</a>
+            </div>
+        </section>
+    
+        <!-- Cakes Section -->
+        <section class="cakes container">
+            {% for cake in popular_cakes %}
+            <div class="cake-card">
+                <a href="{% url 'cake_detail' cake.slug %}">
+                    <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+                </a>
+                <h3>{{ cake.name }}</h3>
+                <p class="price">{{ cake.price }} ₸</p>
+                <button class="btn">В корзину</button>
+            </div>
+            {% endfor %}
+    
+        </section>
+{% endblock %}

@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Торты по категории: {{ category.name }}</h1>
-    <div>
-        {% for cake in cakes %}
-        <a href="{% url 'cake_detail' cake.slug %}">{{ cake.name }}</a>
-        {% endfor %}
-    </div>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+<main>
+    <section class="catalog container">
+      <h2>Торты по категории: {{ cake.category }}</h2>
+      <div class="cakes">
+        {% for cake in cakes %}
+        <div class="cake-card">
+          <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+          <h3>{{ cake.name }}</h3>
+          <p class="price">{{ cake.price }} ₸</p>
+          <a href="{% url 'cake_detail' cake.slug %}" class="btn">Подробнее</a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+  {% endblock %}

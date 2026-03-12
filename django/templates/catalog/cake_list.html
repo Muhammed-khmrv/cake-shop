@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,4 +23,21 @@
     {% endfor %}
   </div>
 </body>
-</html>
+</html> -->
+
+<main>
+    <section class="catalog container">
+      <h2>Каталог тортов</h2>
+      <div class="cakes">
+        {% for cake in cakes %}
+        <div class="cake-card">
+          <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+          <h3>{{ cake.name }}</h3>
+          <p class="price">{{ cake.price }} ₸</p>
+          <a href="{% url 'cake_detail' cake.slug %}" class="btn">Подробнее</a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+{% endblock %}
