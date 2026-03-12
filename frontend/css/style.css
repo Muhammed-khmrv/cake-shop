@@ -202,12 +202,82 @@ main {
     gap: 40px;
     padding: 40px 0;
     align-items: flex-start;
+    flex-direction:row;
 }
 
-.product-details img {
+.chocolate-cake {
     max-width: 400px;
     width: 100%;
     border-radius: 10px;
+}
+
+.rating {
+    width: 40px;
+    height: 40px;
+}
+
+.reviews {
+    display: flex;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 2px solid #f2b6c6;
+    font-size: 16px;
+    border-radius: 15px;
+    background-color: #fff7fa;
+    color: #333;
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+.review-card{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ffd6e2;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.review-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-name{
+    font-size: 18px;
+    font-weight: bold;
+    color: #e75480;
+}
+
+.review-date{
+    font-size: 14px;
+    color: #888;
+}
+
+.review-rate {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.review-rate img{
+    max-width: 30px;
+}
+
+.review-comment {
+    background-color: #fff0f5;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+
+.review-comment p{
+    margin: 0;
 }
 
 .product-info {
