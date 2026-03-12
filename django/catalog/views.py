@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cake, Category
+from cart.cart import Cart
 
 def cake_list(request):
     cakes = Cake.objects.filter(is_available=True)
