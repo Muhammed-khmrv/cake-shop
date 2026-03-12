@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Корзина</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Фото</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Кол-во</th>
+                    <th>Сумма</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                    <tr>
+                        <td>
+                            <img src="{{ item.cake.image.url }}" alt="{{ item.cake.name }}" width="100">
+                        </td>
+                        <td>{{ item.cake.name }}</td>
+                        <td>{{ item.price }} ₸</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.total_price }} ₸</td>
+                        <td>
+                            <a href="{% url 'cart_remove' item.cake.id %}">Удалить</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><strong>Общая сумма:</strong> {{ cart.get_total_price }} ₸</p>
+
+        <a href="#" class="btn">Оформить заказ</a>
+        <p>Корзина пока пустая.</p>
+        <a href="{% url 'cake_list' %}" class="btn">Перейти в каталог</a>
+</div>
+</body>
+</html>
