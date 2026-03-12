@@ -16,5 +16,6 @@
   <p>В наличии</p>
   {% endif %}
   <p>Дата создания: {{ cake.created_at }}</p>
+  <a href="{% url 'cart_add' cake.id %}">Добавить в корзину</a>
 </body>
 </html>
