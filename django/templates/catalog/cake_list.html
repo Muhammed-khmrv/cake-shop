@@ -2,33 +2,24 @@
 {% load static %}
 
 {% block content %}
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-  <h1>Каталог всех тортов</h1>
-  <div>
-    Категории:
-    {% for category in categories %}
-    <a href="{% url 'cakes_by_category' category.slug %}">{{ category.name }} </a>
-    {% endfor %}
-  </div>
-  <div>
-    Торты:
-    {% for cake in cakes %}
-    <a href="{% url 'cake_detail' cake.slug %}">{{ cake.name }}</a>
-    {% endfor %}
-  </div>
-</body>
-</html> -->
 
-<main>
+  <!-- Main -->
+  <main>
     <section class="catalog container">
+
       <h2>Каталог тортов</h2>
+
+      <!-- Категории -->
+      <div class="catalog-categories">
+        <a href="{% url 'cake_list' %}" class="category-btn active">Все</a>
+        {% for category in categories %}
+        <a href="{% url 'cakes_by_category' category.slug %}" class="category-btn">{{ category.name }}</a>
+        {% endfor %}
+      </div>
+
+      <!-- Карточки тортов -->
       <div class="cakes">
+
         {% for cake in cakes %}
         <div class="cake-card">
           <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
@@ -37,7 +28,9 @@
           <a href="{% url 'cake_detail' cake.slug %}" class="btn">Подробнее</a>
         </div>
         {% endfor %}
+
       </div>
+
     </section>
   </main>
 {% endblock %}

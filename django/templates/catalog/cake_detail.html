@@ -1,43 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-  <h1>Подробнее посмотреть торт: {{ cake.name }}</h1>
-  <a href="{% url 'cakes_by_category' cake.category.slug %}">{{ cake.category }}</a>
-  <p>Slug(ссылка): {{ cake.slug }}</p>
-  <p>Описание: {{ cake.description }}</p>
-  <p>Цена: {{ cake.price }} KZT</p>
-  <p>Вес: {{ cake.weight }} г</p>
-  <img src="{{ cake.image.url }}" alt="" style="width: 500px; height: 500px;">
-  {% if cake.is_available %}
-  <p>В наличии</p>
-  {% endif %}
-  <p>Дата создания: {{ cake.created_at }}</p>
-  <a href="{% url 'cart_add' cake.id %}">Добавить в корзину</a>
+{% extends 'base.html' %}
+{% load static %}
 
-  <section class="reviews-section">
-        <h2>Отзывы</h2>
+{% block content %}
+<main>
+
+    <section class="product container">
+
+      <div class="product-details">
+
+        <img src="{{ cake.image.url }}" alt="{{ cake.name }}" class="chocolate-cake">
+
+        <div class="product-info">
+
+          <h2>{{ cake.name }}</h2>
+
+          <!-- Категория -->
+          <p class="product-category">Категория: {{ cake.category }}</p>
+
+          <!-- Рейтинг -->
+          <div class="product-rating">
+            <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+            <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+            <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+            <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+            <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+          </div>
+
+          <p class="price">{{ cake.price }} ₸</p>
+
+          <p>
+            {{ cake.description }}
+          </p>
+
+          <a href="{% url 'cart_add' cake.id %}" class="btn">В корзину</a>
+
+        </div>
+
+      </div>
+
+      <!-- Отзывы -->
+      <div class="reviews">
+        <h2 style="text-align: center;">Отзывы</h2>
 
         {% if reviews %}
-            <div class="reviews-list">
-                {% for review in reviews %}
-                    <div class="review-card">
-                        <div class="review-header">
-                            <strong>{{ review.name }}</strong>
-                            <span>Оценка: {{ review.rating }}/5</span>
-                        </div>
+          {% for review in reviews %}
+          <div class="review-card">
 
-                        <p class="review-text">{{ review.text }}</p>
-                        <small>{{ review.created_at|date:"d.m.Y H:i" }}</small>
-                    </div>
-                {% endfor %}
+            <div class="review-header">
+              <h3 class="review-name">{{ review.name }}</h3>
+              <span class="review-date">{{ review.created_at|date:"d.m.Y H:i" }}</span>
             </div>
+
+            <div class="review-comment">
+
+              <div class="review-rate">
+                {% for i in "12345"|slice:":review.rating" %}
+                <img src="{% static 'images/yellow star.svg' %}" alt="rating" class="rating">
+                {% endfor %}
+              </div>
+
+              <p>
+                {{ review.text }}
+              </p>
+
+            </div>
+
+          </div>
+          {% endfor %}
+
         {% else %}
             <p>Пока отзывов нет. Будьте первым, кто оставит отзыв.</p>
         {% endif %}
+
+      </div>
+
     </section>
-</body>
-</html>
+
+  </main>
+  {% endblock %}

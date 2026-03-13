@@ -317,6 +317,70 @@ main {
     margin-bottom: 20px;
     line-height: 1.5;
 }
+.product-category{
+    font-size:14px;
+    color:#e75480;
+    margin-top:5px;
+    margin-bottom:10px;
+    font-weight:500;
+}
+
+/* =========================
+   ORDERS PAGE
+========================= */
+
+.orders{
+    margin-top:50px;
+}
+
+.orders-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#e75480;
+}
+
+.order-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:25px;
+    border:1px solid #ffd6e2;
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+    transition:0.2s;
+}
+
+.order-card:hover{
+    transform:translateY(-3px);
+}
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.order-date{
+    color:#888;
+    font-size:14px;
+}
+
+.order-products{
+    margin:10px 0;
+}
+
+.order-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.order-price{
+    font-size:18px;
+    font-weight:bold;
+    color:#e75480;
+}
+
+
 
 /* Cart Page */
 .cart-container {
@@ -660,4 +724,57 @@ main {
         flex-direction: column;
         align-items: center;
     }
+}
+/* кнопки на странице успешного заказа */
+.success-actions{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.success-actions .btn,
+.success-actions .btn-catalog{
+    width: 220px;
+    padding: 14px 0;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 8px;
+    background: #ff7aa2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-actions .btn:hover,
+.success-actions .btn-catalog:hover{
+    background: #e85d89;
+}
+.catalog-categories{
+    display:flex;
+    gap:12px;
+    margin:20px 0 35px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    padding:10px 20px;
+    border-radius:25px;
+    border:2px solid #ff7aa2;
+    color:#ff7aa2;
+    font-weight:600;
+    transition:0.3s;
+    background:white;
+}
+
+.category-btn:hover{
+    background:#ff7aa2;
+    color:white;
+}
+
+.category-btn.active{
+    background:#ff7aa2;
+    color:white;
 }

@@ -2,10 +2,23 @@
 {% load static %}
 
 {% block content %}
-<main>
+  <!-- Main -->
+  <main>
     <section class="catalog container">
-      <h2>Торты по категории: {{ cake.category }}</h2>
+
+      <h2>Каталог по категории: {{ category.name }}</h2>
+
+      <!-- Категории -->
+      <div class="catalog-categories">
+        <a href="{% url 'cake_list' %}" class="category-btn">Все</a>
+        {% for category in categories %}
+        <a href="{% url 'cakes_by_category' category.slug %}" class="category-btn">{{ category.name }}</a>
+        {% endfor %}
+      </div>
+
+      <!-- Карточки тортов -->
       <div class="cakes">
+
         {% for cake in cakes %}
         <div class="cake-card">
           <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
@@ -14,7 +27,9 @@
           <a href="{% url 'cake_detail' cake.slug %}" class="btn">Подробнее</a>
         </div>
         {% endfor %}
+
       </div>
+
     </section>
   </main>
   {% endblock %}

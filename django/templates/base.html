@@ -26,8 +26,17 @@
                     <a href="{% url 'about' %}">Наша команда</a>
                 </nav>
                 <div class="auth-buttons">
-                    <a class="login" href="{% url 'login' %}">Login</a>
-                    <a class="register" href="{% url 'register' %}">Register</a>
+                    {% if not user.is_authenticated %}
+                    <a class="login" href="{% url 'login' %}">Войти</a>
+                    <a class="register" href="{% url 'register' %}">Зарегистрироваться</a>
+                    {% else %}
+                    <span>{{ user.username }}</span>
+                    <a href="{% url 'order_list' %}" class="login">Мои заказы</a>
+                    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="register">Выход</button>
+                    </form>
+                    {% endif %}
                 </div>
             </div>
         </header>

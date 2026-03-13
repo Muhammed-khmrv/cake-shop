@@ -82,6 +82,7 @@ main {
     font-size: 14px;
     font-weight: 500;
     transition: 0.3s;
+    background-color: transparent;
 }
 
 /* LOGIN */
@@ -317,6 +318,70 @@ main {
     margin-bottom: 20px;
     line-height: 1.5;
 }
+.product-category{
+    font-size:14px;
+    color:#e75480;
+    margin-top:5px;
+    margin-bottom:10px;
+    font-weight:500;
+}
+
+/* =========================
+   ORDERS PAGE
+========================= */
+
+.orders{
+    margin-top:50px;
+}
+
+.orders-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#e75480;
+}
+
+.order-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:25px;
+    border:1px solid #ffd6e2;
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+    transition:0.2s;
+}
+
+.order-card:hover{
+    transform:translateY(-3px);
+}
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.order-date{
+    color:#888;
+    font-size:14px;
+}
+
+.order-products{
+    margin:10px 0;
+}
+
+.order-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.order-price{
+    font-size:18px;
+    font-weight:bold;
+    color:#e75480;
+}
+
+
 
 /* Cart Page */
 .cart-container {
@@ -659,5 +724,286 @@ main {
     .product-details {
         flex-direction: column;
         align-items: center;
+    }
+}
+/* кнопки на странице успешного заказа */
+.success-actions{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.success-actions .btn,
+.success-actions .btn-catalog{
+    width: 220px;
+    padding: 14px 0;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 8px;
+    background: #ff7aa2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-actions .btn:hover,
+.success-actions .btn-catalog:hover{
+    background: #e85d89;
+}
+.catalog-categories{
+    display:flex;
+    gap:12px;
+    margin:20px 0 35px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    padding:10px 20px;
+    border-radius:25px;
+    border:2px solid #ff7aa2;
+    color:#ff7aa2;
+    font-weight:600;
+    transition:0.3s;
+    background:white;
+}
+
+.category-btn:hover{
+    background:#ff7aa2;
+    color:white;
+}
+
+.category-btn.active{
+    background:#ff7aa2;
+    color:white;
+}
+
+/* =========================
+   ORDER PAGE
+========================= */
+
+.order-page {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+    padding: 50px 0;
+}
+
+.order-form-block,
+.order-summary-block {
+    background: #fff;
+    border: 1px solid #ffd9e5;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.order-form-block h1 {
+    margin: 0 0 10px;
+    font-size: 42px;
+    line-height: 1.15;
+    color: #2b2b2b;
+}
+
+.order-subtitle {
+    margin: 0 0 28px;
+    font-size: 18px;
+    color: #666;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin: 0;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #333;
+    background: #fffafb;
+    border: 1px solid #f3bfd0;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    background: #fff;
+    border-color: #f26b96;
+    box-shadow: 0 0 0 4px rgba(242, 107, 150, 0.15);
+}
+
+.form-error {
+    margin-top: 2px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #c62828;
+    background: #fff1f1;
+    border: 1px solid #ffcaca;
+    border-radius: 10px;
+}
+
+.form-error-main {
+    margin-top: -6px;
+}
+
+.order-form .btn {
+    margin-top: 8px;
+    width: 100%;
+    min-height: 52px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =========================
+   ORDER SUMMARY
+========================= */
+
+.order-summary-block h2 {
+    margin: 0 0 24px;
+    font-size: 34px;
+    color: #2b2b2b;
+}
+
+.order-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    background: #fff7fa;
+    border: 1px solid #ffd9e5;
+    border-radius: 14px;
+}
+
+.order-summary-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.order-summary-info strong {
+    font-size: 18px;
+    color: #2b2b2b;
+    line-height: 1.3;
+}
+
+.order-summary-info span {
+    font-size: 15px;
+    color: #777;
+}
+
+.order-summary-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f26b96;
+    white-space: nowrap;
+}
+
+.order-summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 2px solid #ffd9e5;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+.order-summary-total span {
+    color: #f26b96;
+}
+
+.order-summary-block p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+    .order-page {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-page {
+        padding: 30px 0;
+        gap: 20px;
+    }
+
+    .order-form-block,
+    .order-summary-block {
+        padding: 22px;
+    }
+
+    .order-form-block h1 {
+        font-size: 32px;
+    }
+
+    .order-summary-block h2 {
+        font-size: 28px;
+    }
+
+    .order-summary-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-summary-price {
+        align-self: flex-end;
     }
 }
