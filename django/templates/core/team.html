@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="team">
+
+        <h1>Наша команда</h1>
+        <p class="team-desc">
+            Мы — команда разработчиков, которые решили сделать лучший сайт для тортов.
+            Путь был долгий, долги, dosimx.
+        </p>
+
+        <div class="team-members">
+
+            <div class="member">
+                <img src="{% static './images/team1.jpeg' %}" alt="Мухаммед">
+                <h3>Frontend Маг</h3>
+                <p>Отвечает за красоту сайта и страдает из-за CSS.</p>
+            </div>
+
+            <div class="member">
+                <img src="{% static './images/team2.jpeg' %}" alt="Досым">
+                <h3>Backend Волшебник</h3>
+                <p>Колдует в Django и разговаривает с базой данных.</p>
+            </div>
+
+            <div class="member">
+                <img src="{% static './images/team3.jpeg' %}" alt="Рауф">
+                <h3>Директор</h3>
+                <p>Директор.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="timeline">
+
+        <h2>Хронология разработки</h2>
+
+        <div class="timeline-item">
+            <h4>День 1</h4>
+            <p>Мы придумали идею сайта. Начали работать с гитхабом.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>День 2</h4>
+            <p>Теперь мы компания.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>День 3</h4>
+            <p>Backend разработчик сделал первые модели базы данных</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>День 4</h4>
+            <p>Сделали макет и работали со стилями.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>День 5</h4>
+            <p>Дорабатывали логику сайта.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Сегодня</h4>
+            <p>Сайт наконец работает 🎉</p>
+        </div>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+            RaufCake
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Корзина</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="./team.html">Наша команда</a>
+        </nav>
+
+        <div class="auth-buttons">
+            <a class="login" href="login.html">Login</a>
+            <a class="register" href="register.html">Register</a>
+        </div>
+    </div>
+</header>
+
+<section class="auth-section">
+
+<div class="auth-card">
+
+<h2>Register</h2>
+
+<form action="/register/" method="post">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<label>Confirm password</label>
+<input type="password" name="confirm_password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="cart-container">
+
+    {% if not cart|length > 0 %}
+    <h1 class="cart-title">Корзина пока пустая</h1>
+    <a href="{% url 'cake_list' %}" class="btn">Перейти в каталог</a>
+    {% else %}
+    <h1 class="cart-title">Корзина</h1>
+
+    <table class="cart-table">
+      <thead class="cart-head">
+        <tr>
+          <th class="cart-th">Фото</th>
+          <th class="cart-th">Название</th>
+          <th class="cart-th">Цена</th>
+          <th class="cart-th">Кол-во</th>
+          <th class="cart-th">Сумма</th>
+          <th class="cart-th"></th>
+        </tr>
+      </thead>
+
+      <tbody class="cart-body">
+
+        {% for item in cart %}
+        <tr class="cart-row">
+
+          <td class="cart-img">
+            <a href="./product.html">
+              <img src="{{ item.cake.image.url }}" alt="{{ item.cake.name}}" class="cart-cake-image">
+            </a>
+          </td>
+
+          <td class="cart-name">
+            <a href="{% url 'cake_detail' item.cake.slug %}" class="cart-product-link">
+              {{ item.cake.name }}
+            </a>
+          </td>
+
+          <td class="cart-price">
+            {{ item.price }} ₸
+          </td>
+
+          <td class="cart-quantity">
+            {{ item.quantity }}
+          </td>
+
+          <td class="cart-total">
+            {{ item.total_price }} ₸
+          </td>
+
+          <td class="cart-remove">
+            <a href="{% url 'cart_remove' item.cake.id %}" class="cart-remove-btn">
+              Удалить
+            </a>
+          </td>
+
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+    <p class="cart-total-price">
+      <strong>Общая сумма:</strong> {{ cart.get_total_price }} ₸
+    </p>
+
+    <a href="{% url 'order_create' %}" class="btn-order">
+      Оформить заказ
+    </a>
+
+    <a href="{% url 'cake_list' %}" class="btn-catalog">
+      Перейти в каталог
+    </a>
+    {% endif %}
+</div>
+  
+{% endblock %}

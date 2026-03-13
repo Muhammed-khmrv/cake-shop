@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h2>Лучшие торты на заказ</h2>
+                <p>Свежие и вкусные торты для любого праздника</p>
+                <a href="{% url 'cake_list' %}" class="btn">Смотреть каталог</a>
+            </div>
+        </section>
+    
+        <!-- Cakes Section -->
+        <section class="cakes container">
+            {% for cake in popular_cakes %}
+            <div class="cake-card">
+                <a href="{% url 'cake_detail' cake.slug %}">
+                    <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+                </a>
+                <h3>{{ cake.name }}</h3>
+                <p class="price">{{ cake.price }} ₸</p>
+                <button class="btn">В корзину</button>
+            </div>
+            {% endfor %}
+    
+        </section>
+{% endblock %}

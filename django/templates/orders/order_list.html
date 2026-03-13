@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="container">
+    <div class="orders" style="margin-top:40px;">
+        <h2 class="orders-title">Мои заказы</h2>
+        <p style="text-align:center; margin-bottom:30px;">Здесь отображаются все ваши оформленные заказы</p>
+
+        {% if orders %}
+        {% for order in orders %}
+        <!-- Пример заказа -->
+        <div class="order-card">
+            <div class="order-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <div>
+                    <h3>Заказ #{{ order.id }}</h3>
+                    <p class="order-date" style="color:#888;">{{ order.created_at|date:"d.m.Y H:i" }}</p>
+                </div>
+                <div class="order-status">
+                    {% if order.is_paid %}
+                    <span class="status paid" style="padding:5px 10px; border-radius:6px; background:#d4f7dc; color:#2d7a3e; font-weight:bold;">Оплачен</span>
+                    {% else %}
+                    <span class="status unpaid" style="padding:5px 10px; border-radius:6px; background:#ebbbbb; color:#ce3737; font-weight:bold;">Не оплачен</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="order-card-body" style="line-height:1.6;">
+                <p><strong>Получатель:</strong> {{ order.full_name }}</p>
+                <p><strong>Телефон:</strong> {{ order.phone }}</p>
+                <p><strong>Адрес:</strong> {{ order.address }}</p>
+                {% if order.comment %}
+                    <p><strong>Комментарий:</strong> {{ order.comment }}</p>
+                {% endif %}
+
+                <div class="order-items" style="margin-top:15px;">
+                    <h4>Состав заказа:</h4>
+                    <ul style="margin-left:20px;">
+                        {% for item in order.items.all %}
+                        <li>{{ item.cake.name }} — {{ item.quantity }} шт. × {{ item.price }} ₸</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="order-total" style="margin-top:15px; font-weight:bold;">
+                    Общая сумма: {{ order.total_price }} ₸
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <div class="empty-orders" style="text-align:center; margin-top:40px;">
+            <p>У вас пока нет заказов.</p>
+            <a href="{% url 'cake_list' %}" class="btn" style="margin-top:15px;">Перейти в каталог</a>
+        </div>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}
