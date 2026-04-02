@@ -759,3 +759,20 @@ main {
     background:#5a2a83;
     color:white;
 }
+
+/* Стили для кнопки лайка */
+.like-btn {
+    background: transparent;     /* прозрачный фон */
+    border: none;                /* убрать рамку */
+    font-size: 24px;             /* размер сердца */
+    cursor: pointer;             /* курсор руки при наведении */
+    transition: transform 0.2s;  /* плавная анимация */
+}
+
+.like-btn:hover {
+    transform: scale(1.2);       /* увеличиваем при наведении */
+}
+
+.like-btn:focus {
+    outline: none;               /* убрать обводку при клике */
+}
